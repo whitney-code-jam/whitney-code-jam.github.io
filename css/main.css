@@ -1,3 +1,26 @@
 .white-text {
     color: white;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .yt-embed {
+        width: 355px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .yt-embed {
+        width: 480px;
+        height: 270px;
+    }
+}
+
+
+@media only screen and (min-width: 1366px) {
+    .yt-embed {
+        width: 960px;
+        height: 480px;
+    }
+}
