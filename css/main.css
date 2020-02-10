@@ -1,5 +1,6 @@
-.white-text {
-    color: white;
+/* Makes scrolling to points on page smooth */
+html {
+    scroll-behavior: smooth;
 }
 
 
@@ -22,5 +23,17 @@
     .yt-embed {
         width: 960px;
         height: 480px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .responsive-top-pad {
+        padding-top: 52px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .responsive-top-pad {
+        padding-top: 56px;
     }
 }

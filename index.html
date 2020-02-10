@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
+<!--
+   __  ___          __               _  __   __     __                                           
+  /  |/  /___ _ ___/ /___   _    __ (_)/ /_ / /    / /___  _  __ ___                             
+ / /|_/ // _ `// _  // -_) | |/|/ // // __// _ \  / // _ \| |/ // -_)_                           
+/_/  /_/ \_,_/ \_,_/ \__/  |__,__//_/ \__//_//_/ /_/ \___/|___/ \__/( )                          
+                                                                    |/                           
+   __          __   __         _____         __          __               __                     
+  / /  __ __  / /_ / /  ___   / ___/___  ___/ /___   __ / /___ _ __ _    / /_ ___  ___ _ __ _    
+ / _ \/ // / / __// _ \/ -_) / /__ / _ \/ _  // -_) / // // _ `//  ' \  / __// -_)/ _ `//  ' \ _ 
+/_.__/\_, /  \__//_//_/\__/  \___/ \___/\_,_/ \__/  \___/ \_,_//_/_/_/  \__/ \__/ \_,_//_/_/_/(_)
+     /___/  
+
+    (and also with Bulma, jQuery, and copy pasted code from Stack Overflow :D)
+-->
 <head>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Whitney Code Jam</title>
@@ -8,43 +23,118 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <!--Icons-->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!--jQuery from Google CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
+    <!--Main css for the site. Doesn't have much, just jank media queries.-->
     <link rel="stylesheet" href="css/main.css">
+    
+    <!--Favicon from realfavicongenerator.com-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f1595b">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
     
     <!--Stylesheet for animate-on-scroll (aos)-->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<body>
-    
-    <section class="hero is-danger is-bold is-fullheight">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title is-size-1" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out">Whitney Code Jam</h1>
-                <h2 class="subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">02.29.20 x Whitney High School</h2>
 
-            </div>
+<body>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://codejam.fun">
+                <img src="media/logos/jam-jar.png" width="28" height="28">
+            </a>
+            <!--Code for burger menu. Hidden on desktop, visible on mobile. Must be last.-->
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
         
-        <div class="hero-foot">
-            <nav class="tabs is-boxed is-fullwidth">
-                <div class="container">
-                    <ul>
-                        <li data-aos="fade-up" data-aos-delay="0"><a href="#what">What is Code Jam?</a></li>
-                        <li data-aos="fade-up" data-aos-delay="100"><a href="#who">Who can participate?</a></li>
-                        <li data-aos="fade-up" data-aos-delay="200"><a href="#how">How can I sign up?</a></li>
-                        
-                    </ul>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item has-text-weight-semibold" href="#home">
+                    Home
+                </a>
+                <a class="navbar-item" href="#what">
+                    What is CodeJam?
+                </a>
+                <a class="navbar-item" href="#who">
+                    Who can participate?
+                </a>
+                <a class="navbar-item" href='#schedule'>
+                    Event Schedule
+                </a>
+                <a class="navbar-item" href="/speakers.html">
+                    Speakers and Judges
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-danger" href="https://docs.google.com/forms/d/e/1FAIpQLSeBtRWaAV-JbGoVNCUPEjK-Hv_Ocg8XzNJLwFerTYaqprrrSA/viewform">
+                            <strong>Sign up</strong>
+                        </a>
+                    </div>
                 </div>
-            </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!--Responsive top pad to compensate for the navbar-->
+    <div class="responsive-top-pad"></div>
+    
+    <section class="hero is-danger is-bold is-fullheight-with-navbar scroll-target" id="home">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-size-1" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" id="main-title"><i>Whitney Code Jam 2020</i></h1>
+<!--                <h2 class="subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">02.29.20 x Whitney High School</h2>-->
+            </div>
+        </div>
+        <div class="hero-foot">
+            <div class="columns is-vcentered is-desktop">
+                <div class="column has-text-centered" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" data-aos-anchor=".main-title" data-aos-easing="ease-in-out">    
+                    <h2 class="subtitle is-4"><i class="fas fa-map-marker-alt"></i><strong> Whitney High School, Cerritos, CA</strong></h2>
+                </div>
+                <div class="column has-text-centered" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450" data-aos-anchor=".main-title" data-aos-easing="ease-in-out">
+                    <h2 class="subtitle is-4"><i class="far fa-clock"></i><strong> February 29th, 8AM-8PM</strong></h2>
+                </div>
+                <div class="column has-text-centered" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" data-aos-anchor=".main-title" data-aos-easing="ease-in-out">
+                    <div class="columns is-mobile">
+                        <div class="column">
+                            <p class="title"><strong id="countdown-d">00</strong></p>
+                            <p class="subtitle">DAYS</p>
+                        </div>
+                        <div class="column">
+                            <h2 class="title"><strong id="countdown-h">00</strong></h2>
+                            <p class="subtitle">HOURS</p>
+                        </div>
+                        <div class="column">
+                            <h2 class="title"><strong id="countdown-m">00</strong></h2>
+                            <p class="subtitle">MINS</p>
+                        </div>
+                        <div class="column">
+                            <h2 class="title"><strong id="countdown-s">00</strong></h2>
+                            <p class="subtitle">SECS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-div"></div>
         </div>
     </section>
     
-    <section class="section">
-        <div class="container" id="what">
+    <section class="section scroll-target" id="what">
+        <div class="container">
             <div class="columns">
                 <div class="column is-one-third">
                     <figure class="image">
-                        <img src="media/images/codejameventx960.jpg">
+                        <img src="media/images/codejameventx960.jpg" alt="Code Jam 2019 participant.">
                     </figure>
                 </div>
                 <div class="column">
@@ -52,10 +142,10 @@
                         What is Code Jam?
                     </h1>
                     <p class="subtitle" data-aos="fade-up">
-                        Code Jam is a student-run Hackathon for both novice and expert programmers! A hackathon is a “hacking marathon” where novices can get a crash course in programming, and work with experts on projects to demo at the end of the hackathon!
+                        Code Jam is a student-run Hackathon for both novice and expert programmers! A hackathon is a collaborative-coding marathon where novices can get a crash course in programming, and work with experts on projects to demo at the end of the event!
                     </p>
                     <p class="subtitle" data-aos="fade-up">
-                        The teams with the best projects are awarded prizes, and everyone goes home with more experience programming!
+                        The teams with the best projects are awarded prizes, and everyone goes home with more experience programming along with awesome merch!
                     </p>
                     <p class="subtitle" data-aos="fade-up">
                         What can I expect from Whitney Code Jam? Workshops from industry professionals and student speakers! An exciting competition between your friends and peers alike! And best of all, it’s all <b>free</b>! <b>Lunch and dinner</b> are both provided too!
@@ -64,39 +154,111 @@
             </div>
         </div>
     </section>
-    <section class="section" id="who">
-        <div class="container">
-            <h1 class="title" data-aos="fade-up">
-                Who can participate in Code Jam 2020?
-            </h1>
-            <p class="subtitle" data-aos="fade-up">
-                Participation is open to all high school students (specifically intended for students of the ABCUSD School District) no matter your skill level! Don't be worried if you aren't that good at coding, that's what Code Jam is for! If you are a middle school student and would like to attend, please contact the Code Jam team at <a href="mailto:contact@codejam.fun">contact@codejam.fun</a>.
-            </p>
 
+    <section class="section scroll-target" id="who" style="background-color: #FDFAC6">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title" data-aos="fade-up">
+                        Who can participate in Code Jam 2020?
+                    </h1>
+                    <p class="subtitle" data-aos="fade-up">
+                        Participation is open to all high school students (specifically intended for students of the ABCUSD School District) no matter your skill level! Don't be worried if you aren't that good at coding, that's what Code Jam is for! If you are a middle school student and would like to attend, please contact the Code Jam team at <a href="mailto:contact@codejam.fun">contact@codejam.fun</a>.
+                    </p>
+                </div>
+            
+                <div class="column">
+                    <h1 class="title" data-aos="fade-up">
+                        This sounds great... how do I sign up?
+                    </h1>
+                    <p class="subtitle" data-aos="fade-up">
+                        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeBtRWaAV-JbGoVNCUPEjK-Hv_Ocg8XzNJLwFerTYaqprrrSA/viewform">Signups are here!</a>
+                    </p>
+                </div>
+            </div> 
         </div>
     </section>
-    <section class="section">
-        <div class="container">
-            <h1 class="title" data-aos="fade-up">
-                This sounds great... how do I sign up?
-            </h1>
-            <p class="subtitle" data-aos="fade-up">
-                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeBtRWaAV-JbGoVNCUPEjK-Hv_Ocg8XzNJLwFerTYaqprrrSA/viewform">Signups are here!</a>
-            </p>
-
-        </div>
-    </section>
-    <section class="section" id="schedule">
+    
+    <section class="section scroll-target" id="schedule">
         <div class="container">
             <h1 class="title" data-aos="fade-up">
                 Code Jam 2020 Schedule
             </h1>
-            <p class="subtitle" data-aos="fade-up">
-                 The event starts at 8 AM and runs until 8 PM. A more specific schedule will be posted soon!
-            </p>
-
+            <table class="table" data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th colspan="2">Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8:00</td>
+                        <td colspan="2">Event Starts<br>Opening Ceremony<br>Keynote Speech (Kelly Nguyen)</td>
+                    </tr>
+                    <tr>
+                        <td>9:00</td>
+                        <td>Workshop #1: Intro to Programming/GitHub (Amar Gandhi)</td>
+                        <td>Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>10:00</td>
+                        <td colspan="2">Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>10:30</td>
+                        <td>Workshop #2: Using APIs to Communicate (Danny Cho)</td>
+                        <td>Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>11:30</td>
+                        <td colspan="2">Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td colspan="2">Lunch: Sandwiches!</td>
+                    </tr>
+                    <tr>
+                        <td>1:00</td>
+                        <td>Workshop #3: Internet of Things Talk (Steve Wong)</td>
+                        <td>Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>2:00</td>
+                        <td colspan="2">Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>2:30</td>
+                        <td>Workshop #4: PyGame (Adrian Poitras)</td>
+                        <td>Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>3:30</td>
+                        <td colspan="2">Working on Projects</td>
+                    </tr>
+                    <tr>
+                        <td>5:30</td>
+                        <td colspan="2">Dinner: In-n-out!</td>
+                    </tr>
+                    <tr>
+                        <td>6:00</td>
+                        <td colspan="2">Working on Projects: The Final Hour</td>
+                    </tr>
+                    <tr>
+                        <td>7:00</td>
+                        <td colspan="2">Presentations &amp; Judging</td>
+                    </tr>
+                    <tr>
+                        <td>8:00</td>
+                        <td colspan="2">That's all, folks!</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-aos="fade-up">All workshops are optional to attend, but highly recommended!</p>
+            <p data-aos="fade-up">See our <a href="/speakers.html"> speakers page</a> for more info on workshop leaders and speakers!</p>
         </div>
     </section>
+    
     <section class="section">
         <div class="container">
             <h1 class="title is-size-2" data-aos="fade-up">
@@ -107,10 +269,73 @@
     </section>
     
     <!-- Empty div so aos doesn't freak out -->
-    <div style="margin-bottom: 100px"></div>
+    <div style="padding-bottom: 90px"></div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        /**********  Animate on Scroll  **********/
+        AOS.init({
+            once: true,
+        });
+        
+        /**********  Navbar  **********/
+        // uses jQuery
+        $(document).ready(function() {
+            // Check for click events on the navbar burger icon
+            $(".navbar-burger").click(function() {
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+            });
+        });
+
+        /**********  Countdown  **********/
+        // Set the date we're counting down to
+        var countDownDate = new Date("Feb 29, 2020 8:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element respective elements
+            document.getElementById("countdown-d").innerHTML = days;
+            document.getElementById("countdown-h").innerHTML = hours;
+            document.getElementById("countdown-m").innerHTML = minutes;
+            document.getElementById("countdown-s").innerHTML = seconds;
+            
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                // Once it's done everything gets zeroed out
+                document.getElementById("countdown-d").innerHTML = "00";
+                document.getElementById("countdown-h").innerHTML = "00";
+                document.getElementById("countdown-m").innerHTML = "00";
+                document.getElementById("countdown-s").innerHTML = "00";
+            }
+        }, 1000);
+        
+        /**********  Bold navbar links on scroll  **********/
+        var windowOffset = 60;
+        $(window).on('scroll', function() {
+            $('.scroll-target').each(function() {
+                if($(window).scrollTop() >= ($(this).offset().top - windowOffset)) {
+                    var id = $(this).attr('id');                   
+                    $('nav div div a').removeClass('has-text-weight-semibold');
+                    $("nav div div a[href='#"+ id +"']").addClass('has-text-weight-semibold');
+                }
+            });
+        });
     </script>
+
 </body>
 </html>
