@@ -1,6 +1,11 @@
 /* Makes scrolling to points on page smooth */
+/* The overflow stuff keeps it from being to wide on mobile. There was this really wacko bug... */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
 }
 
 
