@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABC Code Jam - Competition</title>
+    <!--CSS framework bulma.io-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <!--Icons-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!--Favicon from realfavicongenerator.com-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f1595b">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://codejam.fun">
+                <img src="media/logos/ABC_Code_Jam_logo.png" width="28" height="28">
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/index.html">
+                    Home
+                </a>
+                <a class="navbar-item" href="/speakers.html">
+                    Speakers and Judges
+                </a>
+                <a class="navbar-item" href="/sponsors.html">
+                    Our Sponsors
+                </a>
+                <a class="navbar-item has-text-weight-semibold" href="/winners.html">
+                    Past Winners
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-danger" href="http://signup.codejam.fun">
+                            <strong>Register Here!</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>    
+    
+    <section class="hero is-danger is-bold is-halfheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-size-1">Competition</h1>
+                <p class="subtitle"><i>ABC Code Jam 2025</i></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Important Links:</h1>
+
+            <ol style="list-style: circle; margin-left: 20px; display: flex; flex-direction: column; gap: 5px;">
+                <li>
+                    <p class="subtitle" data-aos="fade-up">
+                        <a href="https://forms.gle/Vb8mzbBHNSfgES658" target="_blank">Submission Confirmation Form</a>
+                    </p>
+                </li>
+
+                <li>
+                    <p class="subtitle" data-aos="fade-up">
+                        <a href="https://drive.google.com/drive/folders/1VFAiWYL7T0BhqnaPyk3VMlbNilkchyiq?usp=sharing" target="_blank">Submission Drive</a>
+                    </p>
+                </li>
+
+                <li>
+                    <p class="subtitle" data-aos="fade-up">
+                        <a href="https://forms.gle/T54AnvaVHJ9cL1dFA" target="_blank">AI Use Form</a>
+                    </p>
+                </li>
+
+                <li>
+                    <p class="subtitle" data-aos="fade-up">
+                        <a href="https://github.com/whitney-code-jam/Project-Submission-CodeJam-2025" target="_blank">Repository</a>
+                    </p>
+                </li>
+
+                <li>
+                    <p class="subtitle" data-aos="fade-up">
+                        <a href="https://docs.google.com/document/d/1EvhtecKp5dtd7bEWcbqsjiDPa719AlDxcKSEaHdQsq8/edit?usp=sharing" target="_blank">Rubric</a>
+                    </p>
+                </li>
+            </ol>
+
+            <div style="height: 40px;"> </div>
+
+            <iframe src="/media/images/CODE JAM PROJECT BOOKLET.pdf" width="100%" height="1000px"></iframe>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
